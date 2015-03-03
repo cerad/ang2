@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <title><?php echo $title; ?></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="<?php echo $base; ?>">
+  <link rel="stylesheet" type="text/css" href="app.css">
+  <script src="/bower_components/angular/angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
+<body>
+    
+<div class="scopes">
+  <div ng-controller="MainController">
+    <p>Good {{timeOfDay}}, {{name}}!</p>
+
+    <div ng-controller="ChildController">
+      <p>Good {{timeOfDay}}, {{name}}!</p>
+
+      <div ng-controller="GrandChildController">
+        <p>Good {{timeOfDay}}, {{name}}!</p>
+      </div>
+    </div>
+  </div>
+</div>
+    
+</body>
+</html>
