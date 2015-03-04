@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <title><?php echo $title; ?></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="<?php echo $base; ?>">
+  <link rel="stylesheet" type="text/css" href="app.css">
+  <script src="/bower_components/angular/angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
+<body>
+    
+<div ng-controller="FormController">
+  <form novalidate class="css-form">
+    Name: <input type="text" ng-model="user.name" required/><br />
+    E-mail: <input type="email" ng-model="user.email" /><br />
+    Gender: <input type="radio" ng-model="user.gender" value="male" />Male
+    <input type="radio" ng-model="user.gender" value="female" />Female<br />
+    <input type="button" ng-click="reset()" value="Reset" />
+    <input type="submit" ng-click="update(user)" value="Save" />
+  </form>
+  <pre>form = {{user | json}}</pre>
+  <pre>master = {{master | json}}</pre>
+</div>
+
+
+</body>
+</html>
